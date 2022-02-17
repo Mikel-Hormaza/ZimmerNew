@@ -1,0 +1,269 @@
+/* ===========================================
+HOTELES
+=========================================== */
+
+.hoteles .hotel {
+    border: 1px solid #ddd !important;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hoteles .hotel:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.hoteles .hotel .title {
+    font-weight: bold;
+}
+
+/* ===========================================
+LIKE BUTTON
+=========================================== */
+
+.fa-heart {
+    transition: color, transform 0.1s;
+}
+
+/* .fa-heart:hover {
+    transform: scale(1.1);
+}
+
+.fa-heart:active {
+    transform: scale(1.5);
+} */
+
+nav .dropdown:last-child .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+/* ===========================================
+HOME HEADER
+=========================================== */
+
+#home-header {
+    color: white;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4) ), url('../img/gaztelugatze.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home-header .input-button {
+    display: flex;
+}
+
+#home-header .input-button input {
+    max-width: 80vw;
+    min-width: 50vw;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+#home-header .input-button button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+/* ===========================================
+INDEX DESTINATIONS
+=========================================== */
+
+.destinations img {
+    transition: opacity 0.3s;
+    opacity: 0.9;
+}
+
+.destinations img:hover {
+    opacity: 0.95;
+}
+
+#prb{
+    margin-top: 1%;
+    margin-bottom: -1%;
+    /* background-color: #F5F5F5; */
+}
+/* ===========================================
+INDEX MOTAK
+=========================================== */
+
+.motak img {
+    transition: opacity 0.3s;
+    opacity: 0.8;
+}
+
+.motak img:hover {
+    opacity: 0.95;
+}
+
+#mota{
+    margin-top: 1%;
+    margin-bottom: -1%;
+    /* background-color: #F5F5F5; */
+}
+
+/* ===========================================
+USER ICON
+=========================================== */
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    /* background-color: tomato; */
+}
+
+/* ===========================================
+COMENTS
+=========================================== */
+
+#comment-form input {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+#comment-form .btn-secondary {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+#comment-form input:focus {
+    border-bottom: 1px solid rgb(135, 135, 135);
+    outline: none;
+}
+
+.comment {
+    padding-top: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+/* .comment .del-btn {
+    width: 23px;
+    height: 23px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.comment .del-btn:hover {
+    border-radius: 50%;
+    background-color: #ddd;
+} */
+
+.comment .del-btn:active {
+    background-color: rgb(194, 194, 194);
+}
+
+.comment .edit-btn {
+    width: 23px;
+    height: 23px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.comment .edit-btn:hover {
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.comment .edit-btn:active {
+    background-color: rgb(194, 194, 194);
+}
+
+/* ===========================================
+MISCELANEOUS
+=========================================== */
+
+.title {
+    font-weight: bold !important;    
+}
+
+
+.title a {
+    text-decoration: none !important;
+    color: rgba(0, 0, 0, .9) !important;
+}
+
+.title a:hover {
+    text-decoration: underline !important;
+}
+
+/* ===========================================
+FOOTER
+=========================================== */
+
+#footer{
+   font-size: 20px;
+   left:0px;
+   right: 0px;
+   bottom: auto;
+   width: 100%;
+   position: absolute;
+}
+#footer ul li{
+    display: inline;
+    font-size: 30px;
+}
+#footer a{
+    color:white;
+}
+
+/* ===========================================
+BUSQUEDA DE HOME PAGE
+=========================================== */
+
+.input-button input {
+    max-width: 80vw;
+    min-width: 50vw;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.input-button button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.prof-button {
+    border-radius: 0.25em;
+    color: white !important;
+    background-color: #198754 !important;
+}
+
+.del-btn {
+    width: 23px;
+    height: 23px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.users-icon {
+    font-size: 100px;
+}
