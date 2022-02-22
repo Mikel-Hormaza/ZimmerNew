@@ -2,7 +2,7 @@
   <div class="container d-flex justify-content-between flex-row" id="footerdivpadre">
     
     <div>
-      <h1>Zimmer</h1>
+      <img src="/img/LogoZimmerBlanco.png" alt="" style="height: 40px; width: 90px;">
       <p>Zimmer zu vermieten</p>
     </div>
 
