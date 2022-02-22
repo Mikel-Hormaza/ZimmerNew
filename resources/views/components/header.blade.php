@@ -1,4 +1,5 @@
 <title>Zimmer</title>
+<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
 <!-- META -->
 <meta charset="UTF-8">
