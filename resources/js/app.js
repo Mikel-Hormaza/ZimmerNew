@@ -26,6 +26,7 @@ window.$ = window.jQuery = require('jquery')
 Vue.component('hotel-list', require('./components/hotel/ListComponent.vue').default);
 Vue.component('fovoritos-list', require('./components/hotel/FavoritosComponent.vue').default);
 Vue.component('hotel-details', require('./components/hotel/DetailsComponent.vue').default);
+Vue.component('hotel-reserva', require('./components/hotel/ReservaComponent.vue').default);
 // Vue.component('home-search', require('./components/SearchComponent.vue').default);
 
 Vue.component('comentario', require('./components/ComentarioComponent.vue').default);

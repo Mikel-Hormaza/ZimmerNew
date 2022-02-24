@@ -29,9 +29,22 @@
       <div>
         <div class="d-flex justify-content-between mt-lg-4 mt-md-4 mt-4">
           <span class="title">{{ hotel.documentName }}</span>
+          <button type="button" class="btn btn-warning btn-md" v-on:click="isHidden = !isHidden">Reservar</button>
           <i v-if="fav" v-on:click="like($event, hotel.id, user_id)" class="fa fa-heart fs-4 text-danger"></i>
           <i v-else v-on:click="like($event, hotel.id, user_id)" class="fa fa-heart fs-4 text-secondary"></i>
         </div>
+
+        <!-- Calendar -->
+        <div class=" col-lg-8 control-section daterangeformat">
+          <div class="content-wrapper">
+            <div class="content">
+                <div id="control_wrapper" class="control_wrapper datarangepicker_format">
+                  <input type="text" name="daterange" value="" v-if="!isHidden"/>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
         <span class="text-muted d-block mb-2">
           {{ hotel.municipality }}, {{ hotel.territory }}
         </span>
@@ -60,6 +73,24 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { DateRangePickerPlugin } from "@syncfusion/ej2-vue-calendars";
+// import $ from "./node_modules/jquery/jquery.js";
+
+Vue.use(DateRangePickerPlugin);
+// Vue.use(RadioButtonPlugin);
+
+// $(function calendar() {
+//     isHidden = !isHidden;
+//     $('input[name="daterange"]').daterangepicker({
+//       opens: 'left'
+//     }, function(start, end, label) {
+//       console.log ("Fecha inicio: " + start.format('YYYY-MM-DD'));
+//       console.log ("Fecha fin: " + end.format('YYYY-MM-DD'));
+//       // console.log (end);
+//       // alert ("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+//     });
+// });
 
   export default {
 
@@ -69,10 +100,22 @@
 
     props: ["id", "user_id", "fav"],
 
+    data:function() {
+      return {
+        waterMarkText: "Select a Range",
+        dateFormat: "dd/MMM/yy",
+        startValue: new Date(new Date().setDate(3)),
+        endValue: new Date(new Date().setDate(28)),
+        separate: "-"
+      }
+    },
+
     data: () => ({
       hotel: null,
       likes: [],
-      destination: ""
+      destination: "",
+      isHidden: false,
+
     }),
 
     computed: {
