@@ -18,12 +18,12 @@
             </span>
         </div>
         <div class="d-flex gap-2 align-items-center">
-          <div v-if="this.auth.rol == 1 || this.comentario.user_id == this.auth.id" v-bind:action="'/komentarioa/' + this.comentario.id" method="POST">
+          <div v-if="this.auth.rol > 0 || this.comentario.user_id == this.auth.id" v-bind:action="'/komentarioa/' + this.comentario.id" method="POST">
             <button type="submit" class="edit-btn" data-bs-toggle="modal" v-bind:data-bs-target="'#modal' + this.comentario.id">
               <i class="fa fa-edit fs-5 text-muted"></i>
             </button>
           </div>
-          <form v-if="this.auth.rol == 1 || this.comentario.user_id == this.auth.id" v-bind:action="'/komentarioa/' + this.comentario.id" method="POST">
+          <form v-if="this.auth.rol > 0 || this.comentario.user_id == this.auth.id" v-bind:action="'/komentarioa/' + this.comentario.id" method="POST">
             <input type="hidden" name="_token" :value="csrf">
             <!-- <input type="hidden" name="hotel_id" :value="this.comentario.hotel_id"> -->
             <input type="hidden" name="next_url" :value="'/hoteles/' + this.comentario.hotel_id">

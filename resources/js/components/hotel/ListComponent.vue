@@ -161,16 +161,6 @@ export default {
       } else {
         this.limite = filters_length;
       }
-      // if (this.limite === this.limite_defecto) {
-      //   if (this.limite + 5 < filters_length) {
-      //     this.limite += 5;
-      //   } else {
-      //     this.limite = filters_length;
-      //   }
-      // } else {
-      //   this.limite = this.limite_defecto;
-      // }
-      // this.limite = (this.limite === this.limite_defecto) ? filters_length : this.limite_defecto;
     },
     truncate(descripcion) {
       if (descripcion.length > 100) {

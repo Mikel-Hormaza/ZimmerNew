@@ -8,6 +8,7 @@ use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FavoritoController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Auth::routes();
+Route::post('register', [RegisterController::class, 'create']);
 
 Route::middleware('cors')->group(function() {
     // HOME
@@ -36,6 +38,8 @@ Route::middleware('cors')->group(function() {
 // PERFIL
 Route::get('/profile', [PerfilController::class, 'index'])->middleware('auth');
 Route::put('/profile/{id}', [PerfilController::class, 'update'])->middleware('auth');
+Route::get('/profile/rol/{id}', [PerfilController::class, 'rol'])->middleware('auth');
+Route::put('/profile/{id}/{rol}', [PerfilController::class, 'updateRol'])->middleware('auth');
 
 Route::delete('/erabiltzailea/{id}', [AdminController::class, 'delete_user'])->middleware('auth');
 

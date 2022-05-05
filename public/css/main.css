@@ -150,22 +150,6 @@ COMENTS
     /* border-bottom: 1px solid #ddd; */
 }
 
-/* .comment .del-btn {
-    width: 23px;
-    height: 23px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: red;
-    font-weight: bold;
-    font-size: 1em;
-}
-
-.comment .del-btn:hover {
-    border-radius: 50%;
-    background-color: #ddd;
-} */
-
 .comment .del-btn:active {
     background-color: rgb(194, 194, 194);
 }
@@ -267,3 +251,22 @@ BUSQUEDA DE HOME PAGE
 .users-icon {
     font-size: 100px;
 }
+
+/* ===========================================
+ADMINISTRACIÓN DE USUARIOS
+=========================================== */
+
+.userAdminIcon{
+    height: 2.5rem;
+}
+
+.userCreationData{
+    display: none;
+}
+
+@media (min-width: 768px) { 
+    .userCreationData{
+        display: block;
+    }
+}
+

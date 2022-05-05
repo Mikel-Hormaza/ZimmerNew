@@ -39,7 +39,7 @@
                             <span>Gogokoak</span>
                         </a>
                     </li>
-                      @if (Illuminate\Support\Facades\Auth::user()->rol === 1)
+                      @if (Illuminate\Support\Facades\Auth::user()->rol > 0)
                         <li>
                             <a class="dropdown-item d-flex align-items-center gap-3" href="/admin">
                                 <i class="fa fa-cog fs-5 text-muted"></i>

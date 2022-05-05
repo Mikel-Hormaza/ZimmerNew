@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class RegisterController extends Controller
 {
@@ -41,37 +43,28 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
+    /* Esta función crea los usuarios. 
+    Si la BD no tiene usuarios, el rol del usuario será 2 (superadmin).
+    Si sí hay usuarios, el rol será 0 (usuario normal) */
+    public function create(Request $request)
     {
-        return Validator::make($data, [
+        $rolAAnadir = 0;
+        $users = User::all();
+        if (sizeof($users) == 0) {
+            $rolAAnadir = 2;
+        }
+        $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'initials' => ['required', 'string', 'max:3'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
+        if (!($validator->fails())) {
+            $user = User::create(['name'=>$request['name'], 'initials'=>$request['initials'], 'email'=>$request['email'], 'rol'=>$rolAAnadir, 'password' => Hash::make($request['password'])]);
+           return Redirect::to('/')->with('success', "Erabiltzailea sortu da");
+        } else {
+             return Redirect::to('/register')->with('error', "Erabiltzailea ez da sortu. Mesedez, sartu datuak berriro");
+        }
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'initials' => $data['initials'],
-            'email' => $data['email'],
-            'rol' => 0,
-            'password' => Hash::make($data['password']),
-        ]);
-    }
 }
