@@ -29,7 +29,6 @@
       <div>
         <div class="d-flex justify-content-between mt-lg-4 mt-md-4 mt-4">
           <span class="title">{{ hotel.documentName }}</span>
-          <button type="button" class="btn btn-warning btn-md" v-on:click="isHidden = !isHidden">Reservar</button>
           <i v-if="fav" v-on:click="like($event, hotel.id, user_id)" class="fa fa-heart fs-4 text-danger"></i>
           <i v-else v-on:click="like($event, hotel.id, user_id)" class="fa fa-heart fs-4 text-secondary"></i>
         </div>
@@ -38,9 +37,9 @@
         <div class=" col-lg-8 control-section daterangeformat">
           <div class="content-wrapper">
             <div class="content">
-                <div id="control_wrapper" class="control_wrapper datarangepicker_format">
+                <!-- <div id="control_wrapper" class="control_wrapper datarangepicker_format">
                   <input type="text" name="daterange" value="" v-if="!isHidden"/>
-                </div>
+                </div> -->
             </div>
           </div>
         </div>
